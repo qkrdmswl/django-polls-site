@@ -1,0 +1,121 @@
+:root {
+  /* Color */
+  --color-white: #ffffff;
+  --color-light-white: #eeeeee;
+  --color-dark-white: #bdbdbd;
+  --color-pink: #fe918d;
+  --color-dark-pink: #ff6863;
+  --color-dark-grey: #4d4d4d;
+  --color-grey: #616161;
+  --color-light-grey: #7c7979;
+  --color-blue: #73aace;
+  --color-yellow: #fff7d1;
+  --color-orange: #feb546;
+  --color-black: #000000;
+
+  /* Font size */
+  --font-large: 48px;
+  --font-semi-large: 35px;
+  --font-medium: 22px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
+
+  /* size */
+  --size-border-radius: 4px;
+
+  /* Animation */
+  --animation-duration: 300ms;
+}
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  user-select: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/* Typography */
+
+h1 {
+  font-family: "sae";
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+  color: var(--color-black);
+  margin: 16px 0px;
+}
+
+h2 {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
+  color: var(--color-black);
+  margin: 8px 0;
+}
+
+h3 {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  color: var(--color-black);
+  margin: 8px 0;
+}
+
+p {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  color: var(--color-black);
+  margin: 4px 0;
+}
+@font-face {
+  src: url("BMJUA_ttf.ttf");
+  font-family: "jua";
+}
+@font-face {
+  src: url("HoonSaemaulundongR.ttf");
+  font-family: "sae";
+}
+.header {
+  text-align: center;
+  justify-content: center;
+}
+
+#question_title {
+  font-family: "sae";
+}
+
+.results_ul {
+  padding-top: 50px;
+  text-decoration: none;
+  text-align: center;
+}
+#results_list {
+  font-family: "sae";
+  font-size: 28px;
+  padding: 7px;
+}
+
+.revote {
+  padding-top: 15px;
+  text-align: center;
+  font-family: "jua";
+  font-size: var(--font-medium);
+}
+
+.revote a:hover {
+  background-color: var(--color-orange);
+  border-radius: var(--size-border-radius);
+}

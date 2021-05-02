@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'results.css' %}?after">
+    <title>투표 결과</title>
+</head>
+<body>
+    <div class="header">
+        <h1 id="question_title">{{ question.question_text }}</h1>   
+    </div>
+    <div class="results">
+        <ul class="results_ul">
+        {% for choice in question.choice_set.all %}
+            <li id="results_list">{{ choice.choice_text }} - {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="revote">
+        <a href="{% url 'polls:detail' question.id %}">다시 투표할래요!</a>
+    </div>
+</body>
+</html>

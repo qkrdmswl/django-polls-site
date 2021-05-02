@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'detail.css' %}?after">
+    <title>투표창</title> 
+</head>
+<body>
+    <div class="header">
+        <h1 id="question">{{ question.question_text }}</h1>
+        <!-- <hr width="50%"></hr> -->
+    </div>
+
+    {% if error_message %}<p class="err_msg"><strong id="err_msg">{{ error_message }}</strong></p>{% endif %}
+    <div class="choice_list"> 
+        <div class="choice_list_in">
+            <form action="{% url 'polls:vote' question.id %}" method = "post">
+            {% csrf_token %}
+            {% for choice in question.choice_set.all %}
+            <input type="radio" name = "choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+            <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="submit_btn_div">
+        <input type="submit" id="vote_btn" value="Vote" />
+        <input type="button" id="home_btn" value="Home" onclick="location.href='/'"/>
+    </div>
+
+    </form>    
+</body>
+</html>
+

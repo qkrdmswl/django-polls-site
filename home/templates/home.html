@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home.css' %}?after">
+    <link rel="preconnect" href="https://fonts.gstatic.cstatic 'home.css' %}om">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/eef3fe2644.js" crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function(){
+        var loginForm = $('.login_form');
+        var registerForm = $('.register_form');
+        var loginFormBG = $('.login_form_bg');
+
+        $('#button_1').click(function(){ 
+            var submenu = $('.questions_list');
+
+            if(submenu.is(":visible")) { 
+                submenu.slideUp();
+            }else{
+                submenu.slideDown();
+        }})
+
+        $('#button_2').click(function(){ 
+            var submenu = $('.about_this_site');
+
+            if(submenu.is(":visible")) { 
+                submenu.slideUp();
+            }else{
+                submenu.slideDown();
+        }})
+
+        $('#button_3').click(function(){ 
+            var submenu = $('.about_developers');
+
+            if(submenu.is(":visible")) { 
+                submenu.slideUp();
+            }else{
+                submenu.slideDown();
+        }})
+
+        $('#button_signup').click(function(){
+            registerForm.css("display","block");
+            loginFormBG.css("display", "block");
+            loginFormBG.animate({ "opacity": "1" }, 500);
+            registerForm.animate({ 'marginTop': '0',  "opacity": "1" }, 300);
+        })
+
+        $('#button_loginout').click(function(){
+            loginForm.css("display","block");
+            loginFormBG.css("display", "block");
+            loginFormBG.animate({ "opacity": "1" }, 500);
+            loginForm.animate({ 'marginTop': '0',  "opacity": "1" }, 300);
+        })
+
+        $('.login_form_bg').click(function(){
+            loginForm.css("display","none");
+            registerForm.css("display","none");
+            loginFormBG.css("display", "none");
+            loginFormBG.animate({ "opacity": "0" }, 500);
+            loginForm.animate({ 'marginTop': '100px',  "opacity": "0" }, 300);
+            registerForm.animate({ 'marginTop': '100px',  "opacity": "0" }, 300);
+        })
+    });
+    </script>
+    <meta charset="UTF-8">
+    <title>About Me! - 나를 알아보자</title>  
+</head>
+<body> 
+    <div class="header">
+        <h1><a id="title" href="/">About You</a></h1>
+        <hr size="5px" width="100%"></hr>
+    </div>
+    <div class="button_login">
+        {% if user.is_authenticated %}
+        <h4 id="username_text">{{ user.username }}님 환영해요 :)</h4>
+        <input onclick="location.href='{% url 'logout' %}'" id="button_logout" type="button" value="Log out"/>
+        {% else%}
+        <input onclick="location.href='login/'" id="button_loginout" type="button" value="Log in"/>
+        <input onclick="location.href='signup/'" id="button_signup" type="button" value="Sign up"/>
+        {% endif %} 
+    </div>
+    <div class="button_div">
+        <input id="button_1" type="button" value="나를 알아보자"/>
+    </div>
+    <div class="questions_list">
+        {% if latest_question_list %}
+        <ul id="question_ul">
+        {% for question in latest_question_list %}
+            <li id="question_list_1"><a href="polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+        {% endfor %}
+        </ul>
+        <div class="add_vote">
+            <input onclick="location.href='savequestion/'" id="add_vote" type="button" value="투표 추가하기"/>
+        </div>
+        {% else %}
+        <p>No polls are available.</p>
+        {% endif %}
+    </div>
+    <div class="button_div">
+        <input id="button_2" type="button" value="이곳을 알아보자"/>
+    </div>
+    <div class="about_this_site">
+        <div id="about_this_site_1">
+            <p id="about_this_site_p">
+                이 사이트는 개발자의 Django(장고) 학습용으로 만들어진 사이트 입니다.<br>
+                <br>
+                ❤사이트 활용 방법❤ <br>
+            </p>
+        </div>
+        <div class="about_this_site_2">
+            <p id="about_this_site_p_2">
+                ✔ "나를 알아보자" 에서 투표를 등록하고 참여해보세요! (사소한 주제도 괜찮습니다😊) <br>
+                ✔ 댓글로 의견을 나눠보세요! <br>
+                ✔ 회원가입/로그인을 하면 나에 대한 기록장을 만들 수 있습니다👏<br>
+                <br>
+            </p>
+        </div>
+        <div>
+            <p id="about_this_site_p">
+                친구들에게 공유하여 서로에 대해 더 알아가보세요😘
+            </p>
+        </div>
+    </div>
+    <div class="button_div">
+        <input id="button_3" type="button" value="개발자를 알아보자"/>
+    </div>
+    <div class="about_developers">
+        <div id="about_developers_eunji">
+            <h1>언지</h1>
+            <div id="about_developers_bg">
+                <p id="description">
+                    이름: 박은지 <br>
+                    장래희망: CEO, Full-stack developer <br>
+                    전화번호 : 010-7140-xxxx<br>
+                    혈액형: B형 <br>
+                    생일: 2001년 7월 3일 <br>
+                    MBTI: ENTJ (대담한 통솔자) <br>
+                    별자리: 게자리 <br>
+                    최애곡: No.5(feat.crush) - Penomeco <br>
+                    스택: Python, Java, C, Html, CSS, Javascript, Django, Node.js, MySQL, Spring, Pandas, Tensorflow  
+                </p>
+            </div>
+                <a href="https://github.com/qkrdmswl">
+                    <i class="fab fa-github"></i>
+                </a>
+                <h3 id="contact_us">
+                    ⬆ contact us! 
+                </h3>
+                <h3 id="contact_us_2">
+                    은지의 깃허브 바로가기
+                </h3>
+        </div>
+        <div id="about_developers_sangwon">
+            <h1>상원</h1>
+            <div id="about_developers_bg">
+                <p id="description">
+                    이름: 강상원 <br>
+                    장래희망: CEO, Programmer <br>
+                    전화번호 : 010-4013-xxxx<br>
+                    혈액형: B형 <br>
+                    생일: 2002년 7월 18일 <br>
+                    MBTI: INTP (논리적인 사색가) <br>
+                    별자리: 게자리 <br>
+                    최애곡: Summer madness - Beenzino<br>
+                    스택: Python, DJango, Javascript, HTML, CSS, PHP, Kotlin, C#, C, Node.js, MySQL, React
+                </p>
+            </div>
+            <a href="https://github.com/kneknke">
+                <i class="fab fa-github"></i>
+            </a>
+            <h3 id="contact_us">
+                ⬆ contact us!
+            </h3>
+            <h3 id="contact_us_2">
+                상원이의 깃허브 바로가기
+            </h3>
+        </div>
+
+    </div>
+</body>
+</html>

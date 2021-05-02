@@ -1,0 +1,339 @@
+:root {
+  /* Color */
+  --color-white: #ffffff;
+  --color-light-white: #eeeeee;
+  --color-dark-white: #bdbdbd;
+  --color-pink: #fe918d;
+  --color-dark-pink: #ff6863;
+  --color-dark-grey: #4d4d4d;
+  --color-grey: #616161;
+  --color-light-grey: #7c7979;
+  --color-blue: #73aace;
+  --color-yellow: #fff7d1;
+  --color-orange: #feb546;
+  --color-black: #000000;
+
+  /* Font size */
+  --font-large: 48px;
+  --font-semi-large: 35px;
+  --font-medium: 25px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
+
+  /* size */
+  --size-border-radius: 4px;
+
+  /* Animation */
+  --animation-duration: 300ms;
+}
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  user-select: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/* Typography */
+
+h1 {
+  font-family: "sae";
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+  color: var(--color-black);
+  margin: 16px 0px;
+}
+
+h2 {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
+  color: var(--color-black);
+  margin: 8px 0;
+}
+
+h3 {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  color: var(--color-black);
+  margin: 8px 0;
+}
+
+p {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  color: var(--color-black);
+  margin: 4px 0;
+}
+@font-face {
+  src: url("BMJUA_ttf.ttf");
+  font-family: "jua";
+}
+@font-face {
+  src: url("HoonSaemaulundongR.ttf");
+  font-family: "sae";
+}
+.header {
+  text-align: center;
+  cursor: pointer;
+}
+
+hr {
+  size: 5px;
+}
+
+#title {
+  text-decoration: none;
+  color: black;
+  font-size: 50px;
+  font-family: "jua";
+}
+.button_login {
+  text-align: center;
+  padding-top: 50px;
+  border: 0.5rem outset pink;
+  border-radius: 12px;
+  font: bold 1rem sans-serif;
+  margin: 2rem;
+  padding: 1rem;
+  outline-offset: 0.5rem;
+}
+#button_loginout,
+#button_signup,
+#button_logout {
+  text-align: center;
+  justify-content: center;
+  background-color: #e0a1cd;
+  font-family: "sae";
+  font-size: 28px;
+  user-select: none;
+  border: none;
+  transition: all 0.5s ease;
+  border-radius: var(--size-border-radius);
+  margin: 0 4px;
+}
+#button_loginout:hover,
+#button_signup:hover,
+#button_logout:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+  box-shadow: 5px 5px 20px grey;
+}
+
+#username_text {
+  font-family: "sae";
+}
+
+.button_div {
+  text-align: center;
+  padding: 10px;
+}
+
+#button_1,
+#button_2,
+#button_3 {
+  border: 0.5rem outset rgb(218, 72, 96);
+  border-radius: 12px;
+  outline-offset: 0.5rem;
+  background-color: white;
+  outline: none;
+  cursor: pointer;
+  font-size: var(--font-semi-large);
+  font-family: "sae";
+}
+
+#button_1:hover,
+#button_2:hover,
+#button_3:hover {
+  background-color: #e0a1cd;
+  box-shadow: 5px 5px 14px grey;
+}
+
+.questions_list {
+  font-size: var(--font-medium);
+  background-color: rgb(158, 182, 233);
+  text-align: center;
+  display: none;
+}
+
+#question_ul {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#question_list_1 {
+  margin: 30px;
+  font-family: "jua";
+}
+
+#question_list_1 a {
+  color: white;
+}
+
+#question_list_1 a:hover {
+  border: 1px solid;
+  color: rgb(156, 82, 107);
+  border-radius: var(--size-border-radius);
+}
+.add_vote {
+  padding-bottom: 30px;
+}
+#add_vote {
+  color: #73aace;
+  background-color: white;
+  border-radius: 6px;
+  font-family: "jua";
+  border: none;
+}
+#add_vote:hover {
+  color: black;
+  background-color: #73aace;
+  box-shadow: 5px 5px 14px grey;
+}
+.about_this_site {
+  font-size: var(--font-medium);
+  display: none;
+  background-color: rgb(86, 116, 179);
+  text-align: center;
+}
+
+#about_this_site_p {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: var(--font-medium);
+  font-family: "sae";
+  color: #e4cece;
+}
+.about_this_site_2 {
+  justify-content: center;
+  text-align: center;
+}
+#about_this_site_p_2 {
+  display: inline-block;
+  text-align: left;
+  font-size: var(--font-medium);
+  font-family: "sae";
+  color: #e4cece;
+}
+
+.about_developers {
+  display: none;
+  padding: 10px;
+  width: 90%;
+  margin: 10px auto;
+}
+#about_developers_eunji {
+  font-size: var(--font-regular);
+  text-align: center;
+  font-family: "sae";
+  width: 400px;
+  height: 500px;
+  border-radius: 6px;
+  background-color: #f7bcbc;
+  float: left;
+}
+#about_developers_sangwon {
+  font-size: var(--font-regular);
+  text-align: center;
+  font-family: "sae";
+  width: 400px;
+  height: 500px;
+  border-radius: 8px;
+  background-color: rgb(159, 189, 255);
+  float: right;
+}
+#about_developers_bg {
+  margin: 0 10px;
+  background-color: var(--color-white);
+  border-radius: 4px;
+}
+
+#description {
+  text-align: left;
+  margin-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.fa-github {
+  font-size: 40px;
+  color: white;
+  transition: all 0.5s ease;
+}
+.fa-github:hover {
+  color: rgb(47, 52, 63);
+  transform: scale(1.2);
+}
+#contact_us:hover {
+  transform: scale(1.2);
+}
+#contact_us_2 {
+  font-size: 20px;
+}
+/*로그인, 회원가입 폼*/
+
+.login_form,
+.register_form {
+  width: 340px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  margin-top: 100px;
+}
+
+.login_form form,
+.register_form form {
+  margin-bottom: 15px;
+  background: #f7f7f7;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+
+.login_form h2,
+.register_form h2 {
+  margin: 0 0 15px;
+}
+
+.form_control,
+.btn {
+  min-height: 38px;
+  border-radius: 2px;
+}
+
+.btn {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.text-center {
+  font-family: "jua";
+}
+
+.login_form_bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  opacity: 0;
+}
