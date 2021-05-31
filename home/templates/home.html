@@ -77,7 +77,7 @@
     <div class="button_login">
         {% if user.is_authenticated %}
         <h4 id="username_text">{{ user.username }}님 환영해요 :)</h4>
-        <input onclick="location.href='{% url 'logout' %}'" id="button_logout" type="button" value="Log out"/>
+        <input onclick="location.href='logout/'" id="button_logout" type="button" value="Log out"/>
         {% else%}
         <input onclick="location.href='login/'" id="button_loginout" type="button" value="Log in"/>
         <input onclick="location.href='signup/'" id="button_signup" type="button" value="Sign up"/>
